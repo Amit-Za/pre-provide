@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProvIDe - Bank-Verified Digital Identity Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #38bdf8;
+        }
+        .nav-link.active {
+            color: #10b981;
+        }
+        section {
+            scroll-margin-top: 80px;
+        }
+        @media (max-width: 768px) {
+            section {
+                scroll-margin-top: 60px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100">
+    
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3">
+                    <div class="bg-gradient-to-br from-sky-400 to-emerald-400 w-10 h-10 rounded-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-slate-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-white">
+                        Prov<span class="text-sky-400">ID</span>e
+                    </span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="#project-description" class="nav-link text-sm font-medium">Project Description</a>
+                    <a href="#related-work" class="nav-link text-sm font-medium">Related Work</a>
+                    <a href="#functional-description" class="nav-link text-sm font-medium">Requirements</a>
+                    <a href="#architecture" class="nav-link text-sm font-medium">Architecture</a>
+                    <a href="#work-plan" class="nav-link text-sm font-medium">Work Plan</a>
+                    <a href="#client-side" class="nav-link text-sm font-medium">Client Side</a>
+                    <a href="#server-side" class="nav-link text-sm font-medium">Server Side</a>
+                    <a href="#references" class="nav-link text-sm font-medium">References</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-900/98">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#project-description" class="block nav-link text-sm font-medium py-2">Project Description</a>
+                <a href="#related-work" class="block nav-link text-sm font-medium py-2">Related Work</a>
+                <a href="#functional-description" class="block nav-link text-sm font-medium py-2">Requirements</a>
+                <a href="#architecture" class="block nav-link text-sm font-medium py-2">Architecture</a>
+                <a href="#work-plan" class="block nav-link text-sm font-medium py-2">Work Plan</a>
+                <a href="#client-side" class="block nav-link text-sm font-medium py-2">Client Side</a>
+                <a href="#server-side" class="block nav-link text-sm font-medium py-2">Server Side</a>
+                <a href="#references" class="block nav-link text-sm font-medium py-2">References</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Header Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+                <div class="flex items-center justify-center gap-4 mb-8">
+                    <div class="bg-gradient-to-br from-sky-400 to-emerald-400 w-16 h-16 rounded-xl flex items-center justify-center shadow-xl shadow-sky-500/20">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-slate-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-white">
+                        Prov<span class="text-sky-400">ID</span>e
+                    </h1>
+                </div>
+                <p class="text-2xl md:text-3xl font-semibold text-slate-300 mb-4">
+                    Bank-Verified Digital Identity Platform
+                </p>
+                <p class="text-lg text-slate-400 mb-8">
+                    Secure Identity Provision via Banking Infrastructure
+                </p>
+                <div class="mt-12 space-y-4 text-left max-w-2xl mx-auto">
+                    <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                        <p class="text-sm text-slate-400 mb-2">Specialization</p>
+                        <p class="text-slate-200">Computer Science - Fintech and Algorithmic Trading</p>
+                    </div>
+                    <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                        <p class="text-sm text-slate-400 mb-2">Supervisor</p>
+                        <p class="text-slate-200">Ari Ben Ephraim</p>
+                    </div>
+                    <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                        <p class="text-sm text-slate-400 mb-2">Git Repository</p>
+                        <a href="https://github.com/Amit-Za/provide.git" target="_blank" class="text-sky-400 hover:text-sky-300 underline">
+                            https://github.com/Amit-Za/provide.git
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Description -->
+        <section id="project-description" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-white">1. Project Description</h2>
+                <div class="space-y-6 text-slate-300 leading-relaxed">
+                    <p class="text-lg">
+                        The goal of this project is to develop a Fintech system for creating bank-verified digital identity, enabling users to authenticate with digital services without the need to upload identification documents such as ID cards or passports.
+                    </p>
+                    <p>
+                        The system relies on the bank as a central trust anchor (Trust Anchor), which has already performed a complete legal and regulatory identification process of the user, and allows third parties to receive reliable and secure identity confirmation with the user's consent.
+                    </p>
+                    <p>
+                        The system's vision is to enable every digital service to integrate a unified authentication button - "Identity Verification via Bank" - similar to the common use today of login buttons via Google or Facebook, but with a higher level of trust and in a manner that complies with financial regulation.
+                    </p>
+                    <p>
+                        The project proposes a system for creating a verified digital identity layer that mediates between banks and digital services. The system enables banks to serve as identity providers, and external services to receive verified identity confirmation through simple and unified integration.
+                    </p>
+                    <p>
+                        The system does not replace a bank KYC process, but uses it as a trust foundation. The user authenticates directly with their bank, and the bank confirms, with the user's consent, that this is a legal and verified identity. The digital service does not receive identification documents, but only a digital identity confirmation.
+                    </p>
+                    <p>
+                        The system's vision is to create a new standard for digital authentication, where services will be able to display a unified authentication button of the platform, similar to existing global identity providers, while using the bank as a regulatory trust anchor.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Work -->
+        <section id="related-work" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-white">2. Related Work</h2>
+                <div class="space-y-6 text-slate-300 leading-relaxed">
+                    <p>
+                        Today, digital services that require identity verification rely primarily on classic KYC processes, which include uploading identification documents, taking selfies, and manual or automatic verification. These processes are characterized by high friction, complex user experience, and significant risks related to storing sensitive documents and fraud.
+                    </p>
+                    <p>
+                        In parallel, there are Open Banking / Open Finance solutions that allow access to the user's financial data, but these solutions do not serve as identity providers and do not provide official confirmation of the user's identity to a third party. Banks, despite being the entity that performed the strictest identification, do not currently serve as digital identity providers for external services.
+                    </p>
+                    <p>
+                        As a result, many organizations continue to require uploading physical documents, even when it would be possible to rely on an identity that has already been verified at the banking level.
+                    </p>
+                    <div class="mt-8 bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                        <h3 class="text-xl font-semibold text-white mb-4">Current Solutions & Limitations</h3>
+                        <ul class="space-y-3 list-disc list-inside text-slate-300">
+                            <li><strong class="text-white">Traditional KYC:</strong> High friction, complex UX, security risks from document storage</li>
+                            <li><strong class="text-white">Open Banking/Finance:</strong> Provides financial data access but not identity verification services</li>
+                            <li><strong class="text-white">Social Login (Google/Facebook):</strong> Convenient but lacks regulatory compliance for financial services</li>
+                            <li><strong class="text-white">Bank Identity Gap:</strong> Banks perform strictest verification but don't serve as identity providers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Functional Description / Requirements -->
+        <section id="functional-description" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-white">3. Functional Description / Requirements</h2>
+                
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Basic Functional Description</h3>
+                        <div class="space-y-4 text-slate-300 leading-relaxed">
+                            <p>
+                                A digital service integrates an authentication button of the platform - "Identity Verification via Bank" - into the user interface. After clicking the button, the user is redirected to an authentication process with their bank through a secure redirect.
+                            </p>
+                            <p>
+                                During authentication, the bank performs strong verification using existing means (password, OTP, biometrics), and after user approval, returns a digital identity confirmation (Identity Assertion) to the system. This confirmation includes verified identity details as needed, such as name match, ID number, age, or country, without transferring documents or financial data.
+                            </p>
+                            <p>
+                                The system provides the digital service with a reliable indication of the user's identity, which can be used one-time or continuously, according to the service's policy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Core Use Cases</h3>
+                        <div class="grid md:grid-cols-1 gap-4">
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-2">Loan & Financial Services</h4>
+                                <p class="text-slate-300">
+                                    Complete replacement of uploading identification documents and selfie verification in a bank-verified authentication process.
+                                </p>
+                            </div>
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-2">E-commerce & Trading Platforms</h4>
+                                <p class="text-slate-300">
+                                    Identity verification for customers and sellers, opening verified accounts, and reducing identity fraud.
+                                </p>
+                            </div>
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-2">Sensitive Digital Services</h4>
+                                <p class="text-slate-300">
+                                    Insurance, crypto, age-based or citizenship-based services, and highly regulated services.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Functional Requirements</h3>
+                        <ul class="space-y-3 text-slate-300 list-disc list-inside">
+                            <li>Secure OAuth 2.0 Authorization Code Flow for bank authentication</li>
+                            <li>Identity assertion generation and validation</li>
+                            <li>Token management and lifecycle handling</li>
+                            <li>Audit logging for compliance and security</li>
+                            <li>RTL (Right-to-Left) UI support for Hebrew interface</li>
+                            <li>Responsive design for mobile and desktop devices</li>
+                            <li>No storage of identification documents or bank login credentials</li>
+                            <li>Support for multiple banks through authorized Open Banking intermediaries</li>
+                            <li>Configurable identity attributes (name, ID, age, country) based on service needs</li>
+                            <li>One-time or continuous identity verification modes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture -->
+        <section id="architecture" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-white">4. Architecture</h2>
+                
+                <div class="space-y-8">
+                    <div class="text-slate-300 leading-relaxed">
+                        <p>
+                            The system architecture consists of three main components: the client-side application, the server-side platform, and the bank authentication layer. The architecture follows a microservices approach with clear separation of concerns.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-lg p-8 border border-slate-700">
+                        <h3 class="text-2xl font-semibold text-white mb-6">System Components</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="text-xl font-semibold text-sky-400 mb-3">Client Side</h4>
+                                <ul class="space-y-2 text-slate-300 text-sm">
+                                    <li>• Angular or React framework</li>
+                                    <li>• RTL UI support</li>
+                                    <li>• OAuth redirect handling</li>
+                                    <li>• Responsive design</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-sky-400 mb-3">Server Side</h4>
+                                <ul class="space-y-2 text-slate-300 text-sm">
+                                    <li>• .NET / Node.js / Python</li>
+                                    <li>• REST APIs</li>
+                                    <li>• Identity management</li>
+                                    <li>• Token & permissions</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-sky-400 mb-3">Bank Authentication</h4>
+                                <ul class="space-y-2 text-slate-300 text-sm">
+                                    <li>• OAuth 2.0 Authorization Code Flow</li>
+                                    <li>• Open Banking intermediaries</li>
+                                    <li>• Secure bank connections</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-sky-400 mb-3">Security & Compliance</h4>
+                                <ul class="space-y-2 text-slate-300 text-sm">
+                                    <li>• Data encryption</li>
+                                    <li>• Token management</li>
+                                    <li>• Audit mechanisms</li>
+                                    <li>• Regulatory compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">4.1. Each Module Description</h3>
+                        <div class="space-y-6">
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-3">Authentication Module</h4>
+                                <p class="text-slate-300">
+                                    Handles OAuth 2.0 flow initiation, redirect management, and token exchange. Manages secure communication with bank authentication endpoints through authorized Open Banking intermediaries.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-3">Identity Assertion Service</h4>
+                                <p class="text-slate-300">
+                                    Generates and validates digital identity assertions based on bank-verified user data. Manages identity attribute mapping and ensures compliance with data privacy regulations.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-3">Token Management Module</h4>
+                                <p class="text-slate-300">
+                                    Manages OAuth tokens, refresh tokens, and session management. Implements secure token storage, expiration handling, and revocation mechanisms.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-3">API Gateway</h4>
+                                <p class="text-slate-300">
+                                    Provides RESTful API endpoints for digital services to integrate identity verification. Handles request validation, rate limiting, and API versioning.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-3">Audit & Compliance Module</h4>
+                                <p class="text-slate-300">
+                                    Logs all identity verification events, maintains audit trails for regulatory compliance, and implements data retention policies. Ensures GDPR and financial regulation compliance.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-3">Client UI Module</h4>
+                                <p class="text-slate-300">
+                                    Provides authentication button components, redirect handling, and user feedback. Supports RTL layout for Hebrew interface and responsive design for all devices.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Plan -->
+        <section id="work-plan" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-white">5. Work Plan</h2>
+                
+                <div class="space-y-8">
+                    <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                        <h3 class="text-2xl font-semibold text-white mb-6">Team Members</h3>
+                        <div class="grid md:grid-cols-2 gap-4 text-slate-300">
+                            <div>
+                                <p class="font-semibold text-white">Amit Zamir</p>
+                                <p class="text-sm">ID: 322833021</p>
+                                <p class="text-sm">Email: Im.amit.zamir@gmail.com</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white">Noa Almakais</p>
+                                <p class="text-sm">ID: 211632302</p>
+                                <p class="text-sm">Email: noaelmakies1@gmail.com</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white">May Gorvitz</p>
+                                <p class="text-sm">ID: 322438177</p>
+                                <p class="text-sm">Email: mht1445@gmail.com</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white">Hai Tal</p>
+                                <p class="text-sm">ID: 311561245</p>
+                                <p class="text-sm">Email: haital18@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-6">Project Milestones</h3>
+                        <div class="space-y-4">
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-sky-400 mb-2">Milestone 1: Project Setup & Architecture Design</h4>
+                                <p class="text-slate-300 mb-3">Initial project setup, technology stack selection, and system architecture design.</p>
+                                <p class="text-sm text-slate-400">Responsibility: All team members</p>
+                            </div>
+                            
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-sky-400 mb-2">Milestone 2: Backend Development</h4>
+                                <p class="text-slate-300 mb-3">Server-side implementation including API development, authentication module, and identity assertion service.</p>
+                                <p class="text-sm text-slate-400">Responsibility: Backend team members</p>
+                            </div>
+                            
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-sky-400 mb-2">Milestone 3: Frontend Development</h4>
+                                <p class="text-slate-300 mb-3">Client-side application with authentication UI, redirect handling, and responsive design.</p>
+                                <p class="text-sm text-slate-400">Responsibility: Frontend team members</p>
+                            </div>
+                            
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-sky-400 mb-2">Milestone 4: Integration & Testing</h4>
+                                <p class="text-slate-300 mb-3">Integration of all modules, end-to-end testing, security testing, and compliance verification.</p>
+                                <p class="text-sm text-slate-400">Responsibility: All team members</p>
+                            </div>
+                            
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-sky-400 mb-2">Milestone 5: Documentation & Deployment</h4>
+                                <p class="text-slate-300 mb-3">Final documentation, deployment preparation, and project presentation.</p>
+                                <p class="text-sm text-slate-400">Responsibility: All team members</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                        <p class="text-slate-300">
+                            <strong class="text-white">Note:</strong> Detailed work plan with specific tasks and timelines will be managed using team management software (Monday, Trello, or Jira).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Side -->
+        <section id="client-side" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-white">6. Client Side</h2>
+                
+                <div class="space-y-8">
+                    <div class="text-slate-300 leading-relaxed">
+                        <p>
+                            The client-side application provides a seamless user experience for bank-verified identity authentication. Built with modern web frameworks (Angular or React), the application features a clean, intuitive interface with RTL support for Hebrew users.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Key Features</h3>
+                        <ul class="space-y-3 text-slate-300 list-disc list-inside">
+                            <li>Unified authentication button component for easy integration</li>
+                            <li>Secure OAuth redirect handling and callback management</li>
+                            <li>RTL (Right-to-Left) UI support for Hebrew interface</li>
+                            <li>Responsive design optimized for mobile and desktop</li>
+                            <li>Real-time authentication status feedback</li>
+                            <li>Error handling and user-friendly error messages</li>
+                            <li>Dark mode support for better user experience</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">6.1. Usage Illustration</h3>
+                        <div class="space-y-6">
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-3">Scenario 1: Loan Application</h4>
+                                <ol class="space-y-2 text-slate-300 list-decimal list-inside">
+                                    <li>User visits a loan service website and clicks "Apply for Loan"</li>
+                                    <li>Service displays "Verify Identity via Bank" button</li>
+                                    <li>User clicks the button and is redirected to their bank's authentication page</li>
+                                    <li>User authenticates with bank using existing credentials (password, OTP, biometrics)</li>
+                                    <li>Bank confirms identity and redirects back to loan service</li>
+                                    <li>Loan service receives verified identity assertion and proceeds with application</li>
+                                    <li>No document upload required - identity is verified instantly</li>
+                                </ol>
+                            </div>
+
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-3">Scenario 2: E-commerce Account Creation</h4>
+                                <ol class="space-y-2 text-slate-300 list-decimal list-inside">
+                                    <li>User wants to create a seller account on an e-commerce platform</li>
+                                    <li>Platform requires identity verification for sellers</li>
+                                    <li>User clicks "Verify via Bank" authentication button</li>
+                                    <li>After bank authentication, platform receives verified identity</li>
+                                    <li>Account is created instantly with verified status</li>
+                                    <li>User can start selling immediately without document verification delays</li>
+                                </ol>
+                            </div>
+
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-3">Scenario 3: Age-Restricted Service</h4>
+                                <ol class="space-y-2 text-slate-300 list-decimal list-inside">
+                                    <li>User attempts to access an age-restricted service (e.g., crypto trading)</li>
+                                    <li>Service requires age verification</li>
+                                    <li>User authenticates via bank using ProvIDe</li>
+                                    <li>Service receives age confirmation (without full ID details)</li>
+                                    <li>Access is granted based on verified age attribute</li>
+                                    <li>Privacy is maintained - only necessary information is shared</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">6.2. Mockup</h3>
+                        <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                            <p class="text-slate-300 mb-4">
+                                The client-side interface will include the following key screens and components:
+                            </p>
+                            <ul class="space-y-3 text-slate-300 list-disc list-inside">
+                                <li><strong class="text-white">Authentication Button:</strong> Unified "Verify Identity via Bank" button component with ProvIDe branding</li>
+                                <li><strong class="text-white">Redirect Page:</strong> Secure loading state during bank authentication redirect</li>
+                                <li><strong class="text-white">Success Screen:</strong> Confirmation of successful identity verification</li>
+                                <li><strong class="text-white">Error Handling:</strong> User-friendly error messages for authentication failures</li>
+                                <li><strong class="text-white">Bank Selection:</strong> Interface for users to select their bank (if multiple supported)</li>
+                            </ul>
+                            <p class="text-slate-400 text-sm mt-4 italic">
+                                Note: Detailed mockups and wireframes will be created during the design phase using tools like Figma or Adobe XD.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Server Side -->
+        <section id="server-side" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-white">7. Server Side</h2>
+                
+                <div class="space-y-8">
+                    <div class="text-slate-300 leading-relaxed">
+                        <p>
+                            The server-side platform serves as the core identity verification service, managing authentication flows, identity assertions, and API endpoints for digital services. Built with modern backend technologies (.NET, Node.js, or Python), the server ensures security, scalability, and regulatory compliance.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Server Architecture</h3>
+                        <ul class="space-y-3 text-slate-300 list-disc list-inside">
+                            <li>RESTful API architecture for service integration</li>
+                            <li>Microservices-based design for scalability</li>
+                            <li>Secure token management and storage</li>
+                            <li>Identity assertion generation and validation</li>
+                            <li>Integration with Open Banking intermediaries</li>
+                            <li>Comprehensive audit logging system</li>
+                            <li>Data encryption at rest and in transit</li>
+                            <li>Rate limiting and API security measures</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">7.1. API</h3>
+                        <div class="space-y-6">
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-4">Authentication Endpoints</h4>
+                                <div class="space-y-3 font-mono text-sm">
+                                    <div class="bg-slate-900/50 rounded p-3">
+                                        <span class="text-sky-400">POST</span> <span class="text-white">/api/v1/auth/initiate</span>
+                                        <p class="text-slate-400 mt-1">Initiate OAuth 2.0 authentication flow</p>
+                                    </div>
+                                    <div class="bg-slate-900/50 rounded p-3">
+                                        <span class="text-sky-400">POST</span> <span class="text-white">/api/v1/auth/callback</span>
+                                        <p class="text-slate-400 mt-1">Handle OAuth callback from bank</p>
+                                    </div>
+                                    <div class="bg-slate-900/50 rounded p-3">
+                                        <span class="text-sky-400">POST</span> <span class="text-white">/api/v1/auth/token</span>
+                                        <p class="text-slate-400 mt-1">Exchange authorization code for tokens</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-4">Identity Verification Endpoints</h4>
+                                <div class="space-y-3 font-mono text-sm">
+                                    <div class="bg-slate-900/50 rounded p-3">
+                                        <span class="text-sky-400">POST</span> <span class="text-white">/api/v1/identity/verify</span>
+                                        <p class="text-slate-400 mt-1">Request identity verification for a user</p>
+                                    </div>
+                                    <div class="bg-slate-900/50 rounded p-3">
+                                        <span class="text-sky-400">GET</span> <span class="text-white">/api/v1/identity/assertion/:id</span>
+                                        <p class="text-slate-400 mt-1">Retrieve identity assertion by ID</p>
+                                    </div>
+                                    <div class="bg-slate-900/50 rounded p-3">
+                                        <span class="text-sky-400">GET</span> <span class="text-white">/api/v1/identity/status/:sessionId</span>
+                                        <p class="text-slate-400 mt-1">Check verification status</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-4">Service Management Endpoints</h4>
+                                <div class="space-y-3 font-mono text-sm">
+                                    <div class="bg-slate-900/50 rounded p-3">
+                                        <span class="text-sky-400">POST</span> <span class="text-white">/api/v1/services/register</span>
+                                        <p class="text-slate-400 mt-1">Register a new digital service</p>
+                                    </div>
+                                    <div class="bg-slate-900/50 rounded p-3">
+                                        <span class="text-sky-400">GET</span> <span class="text-white">/api/v1/services/:serviceId/config</span>
+                                        <p class="text-slate-400 mt-1">Get service configuration and API keys</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-4">Audit & Compliance Endpoints</h4>
+                                <div class="space-y-3 font-mono text-sm">
+                                    <div class="bg-slate-900/50 rounded p-3">
+                                        <span class="text-sky-400">GET</span> <span class="text-white">/api/v1/audit/logs</span>
+                                        <p class="text-slate-400 mt-1">Retrieve audit logs (admin only)</p>
+                                    </div>
+                                    <div class="bg-slate-900/50 rounded p-3">
+                                        <span class="text-sky-400">GET</span> <span class="text-white">/api/v1/compliance/report</span>
+                                        <p class="text-slate-400 mt-1">Generate compliance reports</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                                <h4 class="text-xl font-semibold text-emerald-400 mb-4">API Authentication</h4>
+                                <p class="text-slate-300">
+                                    All API endpoints require authentication using API keys or OAuth 2.0 client credentials. Services must register and obtain API credentials before accessing the platform.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section id="references" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-white">8. References</h2>
+                
+                <div class="space-y-6">
+                    <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Technologies & Standards</h3>
+                        <ul class="space-y-2 text-slate-300">
+                            <li><strong class="text-white">OAuth 2.0:</strong> Authorization framework for secure authentication</li>
+                            <li><strong class="text-white">Open Banking / Open Finance:</strong> Financial data sharing standards</li>
+                            <li><strong class="text-white">REST API:</strong> Architectural style for web services</li>
+                            <li><strong class="text-white">Angular / React:</strong> Frontend frameworks for client-side development</li>
+                            <li><strong class="text-white">.NET / Node.js / Python:</strong> Backend runtime environments</li>
+                            <li><strong class="text-white">JWT (JSON Web Tokens):</strong> Token format for identity assertions</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Regulatory & Compliance</h3>
+                        <ul class="space-y-2 text-slate-300">
+                            <li><strong class="text-white">KYC (Know Your Customer):</strong> Customer identification requirements</li>
+                            <li><strong class="text-white">GDPR:</strong> European data protection regulation</li>
+                            <li><strong class="text-white">Financial Regulation:</strong> Banking and financial services compliance</li>
+                            <li><strong class="text-white">PSD2:</strong> Payment Services Directive (EU)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Related Products & Solutions</h3>
+                        <ul class="space-y-2 text-slate-300">
+                            <li><strong class="text-white">Open Banking Platforms:</strong> Existing financial data sharing solutions</li>
+                            <li><strong class="text-white">Social Login Providers:</strong> Google, Facebook authentication services</li>
+                            <li><strong class="text-white">Digital Identity Solutions:</strong> eIDAS, national ID systems</li>
+                            <li><strong class="text-white">Banking APIs:</strong> Bank-provided API services</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Security Standards</h3>
+                        <ul class="space-y-2 text-slate-300">
+                            <li><strong class="text-white">TLS/SSL:</strong> Transport layer security for encrypted communication</li>
+                            <li><strong class="text-white">PKI (Public Key Infrastructure):</strong> Certificate-based security</li>
+                            <li><strong class="text-white">Encryption:</strong> Data protection at rest and in transit</li>
+                            <li><strong class="text-white">Audit Logging:</strong> Security event tracking and compliance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800 bg-slate-900">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <div class="bg-gradient-to-br from-sky-400 to-emerald-400 w-8 h-8 rounded-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <span class="text-lg font-bold text-white">
+                        Prov<span class="text-sky-400">ID</span>e
+                    </span>
+                </div>
+                <p class="text-slate-400 text-sm mb-4">
+                    Bank-Verified Digital Identity Platform
+                </p>
+                <p class="text-slate-500 text-xs">
+                    Final Project - Computer Science - Fintech and Algorithmic Trading
+                </p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active navigation link highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function highlightActiveSection() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightActiveSection);
+        highlightActiveSection();
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+
+
+
+
+
+
+My Project
+Final Project Definition Template
+
+
+
+
+By:
+Student 1 name
+Student 2 name
+Student 3 name
+Student 4 name
+
+Supervisor:
+Name of supervisor
+
+Git:
+Ling to the git repository
+
+ 
+
+
+Table of Contents
+1.	PROJECT DESCRIPTION	2
+2.	RELATED WORK	2
+3.	FUNCTIONAL DESCRIPTION / REQUIREMENTS	2
+4.	ARCHITECTURE	3
+4.1.	EACH MODULE DESCRIPTION	3
+5.	WORK PLAN	3
+6.	CLIENT SIDE	3
+6.1.	USAGE ILLUSTRATION	3
+6.2.	MOCKUP	3
+7.	SERVER SIDE	3
+7.1.	API	4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.	Project description
+
+This section gives a brief description of the system you are building 
+
+2.	Related Work
+
+This section gives a brief description of the related work which is relevant to your project. This includes products, technologies and articles both of competitor products and of work that you will use to build your solution.
+
+3.	Functional Description / Requirements
+
+This section describes the project functionality in more detailed, it should be a general description of the system followed by a list of functional requirements 
+
+4.	Architecture
+
+This section will present the overall architecture of the project in terms of the components that will construct the system: server side, client side, DB, external resources. It should be graphically presented with a short description of each main module of the system.
+Project with deep learning and algorithms that are based on large data must provide the source of the data in this section
+
+4.1.	Each Module description
+In this sub section you will describe the responsibility of each module… in case the module is a combination of several sub modules you should drill down and describe each of this sub modules as well.
+
+5.	Work plan
+
+This section will present the work plan of the project, the work plan must include milestone and responsibility of team members. This is the major work plan, the detailed work plan must be specified using a team management software like Monday, Trello, Jira etc.
+
+
+6.	Client side
+
+In projects that include a client side – and app or website need to fill in this section.
+This section describes the look and operation of the client UI:
+
+6.1.	Usage Illustration
+In this section you will give a description of how the user will use the app. You should present several scenarios in which the user performs different operation with your app which summarize the purpose of the app.
+
+6.2.	Mockup
+Graphic illustration of the different screens in your app.
+
+7.	Server Side
+In this section you will provide more detailed description of the server side functionality and structure
+7.1.	API
+This is the API that the server present to the rest of the world.
+
+8.	References
+List of all the references used in the doc
+
+
+
+
+
+
+
